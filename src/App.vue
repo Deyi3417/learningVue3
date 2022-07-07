@@ -2,11 +2,13 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
+// import LearnDY from './components/LearnDY.vue'
 import LearnDY from './components/LearnDY.vue'
+import Day02 from "./components/Day02.vue";
 </script>
 
 <template>
-  <LearnDY></LearnDY>
+  <Day02></Day02>
 </template>
 
 <style>
