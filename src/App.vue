@@ -6,12 +6,13 @@ import HelloWorld from './components/HelloWorld.vue'
 import LearnDY from './components/LearnDY.vue'
 // import Day02 from "./components/Day02.vue";
 import Day03 from "./components/Day03.vue";
-import Day03_style from "./components/Day03_style.vue";
+import V_IF from "./components/条件渲染/V_IF.vue";
+// import Day03_style from "./components/Day03_style.vue";
 // import Day03_class from "./components/Day03_class.vue";
 </script>
 
 <template>
-  <Day03_style></Day03_style>
+  <V_IF></V_IF>
 </template>
 
 <style>
