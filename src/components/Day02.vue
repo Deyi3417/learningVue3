@@ -3,6 +3,7 @@ export default {
   name: "Day02",
   data() {
     return {
+      uTitle:'计算属性',
       username:'Welcome to 德意的学习天地',
       message:'liudy yduil',
     };
@@ -42,6 +43,7 @@ export default {
 </script>
 
 <template>
+  <h1>{{uTitle}}</h1>
   <div>{{username}}</div>
   <p>{{message}}</p>
 <!-- 第一种： js 表达式 -->

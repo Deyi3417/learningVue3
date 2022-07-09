@@ -4,11 +4,14 @@
 import HelloWorld from './components/HelloWorld.vue'
 // import LearnDY from './components/LearnDY.vue'
 import LearnDY from './components/LearnDY.vue'
-import Day02 from "./components/Day02.vue";
+// import Day02 from "./components/Day02.vue";
+import Day03 from "./components/Day03.vue";
+import Day03_style from "./components/Day03_style.vue";
+// import Day03_class from "./components/Day03_class.vue";
 </script>
 
 <template>
-  <Day02></Day02>
+  <Day03_style></Day03_style>
 </template>
 
 <style>
