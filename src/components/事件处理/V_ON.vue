@@ -30,6 +30,9 @@ export default {
     },
     submitClick:function () {
       console.log('提交数据success');
+    },
+    keyUP:function () {
+      console.log('键盘被按下，数据提交成功success');
     }
   }
 }
@@ -78,6 +81,19 @@ export default {
     </div>
 
     <p style="color: #304aef; font-size: 25px; border: 5px solid #73efb1">2.按键修饰符</p>
+    .enter
+    .tab
+    .delete (捕获“删除”和“退格”键)
+    .esc
+    .space
+    .up
+    .down
+    .left
+    .right
+<!-- 案件修饰符：.{keyCode} (键盘编码） | keyAlias(键盘的简写) 监听键盘的某个键帽  -->
+    <p style="color: red">案件修饰符：.{keyCode} (键盘编码） | keyAlias(键盘的简写) 监听键盘的某个键帽</p>
+    enter按键事件修饰符：<input type="text" @keyup.enter="keyUP"><br>
+    delete按键事件修饰符： <input type="text" @keyup.delete="keyUP">
   </div>
 
 </template>
