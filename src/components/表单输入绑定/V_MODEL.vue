@@ -3,12 +3,15 @@ export default {
   name: "V_MODEL",
   data() {
     return {
-      uTitle:'表单输入绑定v-model',
+      uTitle:"表单输入绑定v-model",
       msg:'',
       checked:true,
     //  定义一个数组
       fruits:[],
-      sex:'man'
+      sex:'man',
+      // 注意赋值的时候使用双引号""
+      city:"长沙",
+      cities:[],
     }
   },
   methods:{
@@ -54,6 +57,26 @@ export default {
     <input type="radio" v-model="sex" value="man">男
     <input type="radio" v-model="sex" value="woman">女
     <p style="font-size: 30px;">性别：{{sex}}</p>
+
+<!--  选项框  -->
+    <!--  单选  -->
+    <h2 style="color: #4568f5; font-size: 27px; border: 5px solid plum">单选框</h2>
+    城市：{{city}}  <select name="" id="" v-model="city">
+      <option value="长沙">长沙</option>
+      <option value="株洲">株洲</option>
+      <option value="湘潭">湘潭</option>
+      <option value="衡阳">衡阳</option>
+    </select>
+    <p style="font-size: 30px;">城市：{{city}}</p>
+
+    <h2 style="color: #4568f5; font-size: 27px; border: 5px solid plum">多选框+multiple</h2>
+    <select name="" id="" v-model="cities" multiple>
+      <option value="长沙">长沙</option>
+      <option value="株洲">株洲</option>
+      <option value="湘潭">湘潭</option>
+      <option value="衡阳">衡阳</option>
+    </select>
+    <h2>{{cities}}</h2>
   </div>
 </template>
 
