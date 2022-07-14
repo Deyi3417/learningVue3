@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       uTitle:"表单输入绑定v-model",
-      msg:'',
+      msg:'deyi',
       checked:true,
     //  定义一个数组
       fruits:[],
@@ -12,6 +12,7 @@ export default {
       // 注意赋值的时候使用双引号""
       city:"长沙",
       cities:[],
+      counter:0,
     }
   },
   methods:{
@@ -19,6 +20,9 @@ export default {
       // console.log(e);
       this.msg = e.target.value;
 
+    },
+    downMsg:function () {
+      console.log(this.msg);
     }
   }
 }
@@ -77,6 +81,17 @@ export default {
       <option value="衡阳">衡阳</option>
     </select>
     <h2>{{cities}}</h2>
+<!--  修饰符：.lazy  -->
+<!-- 在“change”时而非“input”时更新 -->
+    <input type="text" v-model.lazy="msg" placeholder="edit me">
+    <h2>message is：{{msg}}</h2>
+<!--  如果想自动将用户的输入值转为数值类型，可以给 v-model 添加 number 修饰符：  -->
+    <input type="text" v-model.number="counter" placeholder="edit me">
+    <h2>counter is: {{typeof counter}}</h2>
+<!--  trim  -->
+<!--  如果要自动过滤用户输入的首尾空白字符，可以给 v-model 添加 trim 修饰符：  -->
+    <input type="text" v-model.trim="msg" placeholder="edit me" @click="downMsg">
+    <h2>message is(trim)：{{msg}}</h2>
   </div>
 </template>
 
