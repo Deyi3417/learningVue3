@@ -11,12 +11,13 @@ import V_FOR from "./components/列表渲染/V_FOR.vue";
 import ArrayChange from "./components/列表渲染/ArrayChange.vue";
 import V_ON from "./components/事件处理/V_ON.vue";
 import V_MODEL from "./components/表单输入绑定/V_MODEL.vue";
+import MainComponents from "./components/组件基础/MainComponents.vue";
 // import Day03_style from "./components/Day03_style.vue";
 // import Day03_class from "./components/Day03_class.vue";
 </script>
 
 <template>
-  <V_MODEL></V_MODEL>
+  <MainComponents>dy:一级组件</MainComponents>
 </template>
 
 <style>

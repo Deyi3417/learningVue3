@@ -65,7 +65,7 @@ export default {
 <!--  选项框  -->
     <!--  单选  -->
     <h2 style="color: #4568f5; font-size: 27px; border: 5px solid plum">单选框</h2>
-    城市：{{city}}  <select name="" id="" v-model="city">
+    城市：{{city}}  <select name="" id="city" v-model="city">
       <option value="长沙">长沙</option>
       <option value="株洲">株洲</option>
       <option value="湘潭">湘潭</option>
@@ -74,7 +74,7 @@ export default {
     <p style="font-size: 30px;">城市：{{city}}</p>
 
     <h2 style="color: #4568f5; font-size: 27px; border: 5px solid plum">多选框+multiple</h2>
-    <select name="" id="" v-model="cities" multiple>
+    <select name="" id="cities" v-model="cities" multiple>
       <option value="长沙">长沙</option>
       <option value="株洲">株洲</option>
       <option value="湘潭">湘潭</option>
