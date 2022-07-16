@@ -8,7 +8,8 @@ const obj = {
 export default {
   name: "Content",
   components: {ChildComponent},
-  props:['contentMessage_01','contentMessage_02'],
+  // Prop 是你可以在组件上注册的一些自定义 attribute。为了给博文组件传递一个标题，我们可以用 props 选项将其包含在该组件可接受的 prop 列表中：
+  props:['contentMessage_01','contentMessage_02', 'staticValue'],
 
   data() {
     return {
@@ -25,6 +26,7 @@ export default {
     <h2>我是组件1——将展示内容：content-1</h2>
     <h3>{{contentMessage_01}}</h3>
     <h3>{{contentMessage_02}}</h3>
+    <h3>{{staticValue}}</h3>
     <p>{{param}}</p>
     <button @click="param='落苏谣beautiful'">改变message</button>
     <button @click="param='lidy23 真帅'">改变message</button>
