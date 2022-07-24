@@ -14,14 +14,14 @@ import V_MODEL from "./components/表单输入绑定/V_MODEL.vue";
 import MainComponents from "./components/组件基础/MainComponents.vue";
 import Props from "./components/Props/Props.vue";
 import ParentComponent from "./components/父子组件/ParentComponent.vue";
+import SlotContent from "./components/插槽/SlotContent.vue";
+import SlotParentComponent from "./components/插槽/SlotParentComponent.vue";
 // import Day03_style from "./components/Day03_style.vue";
 // import Day03_class from "./components/Day03_class.vue";
 </script>
 
 <template>
-  <ParentComponent></ParentComponent>
-<!--  <Day03></Day03>-->
-<!--  <Props></Props>-->
+  <SlotParentComponent></SlotParentComponent>
 </template>
 
 <style>
