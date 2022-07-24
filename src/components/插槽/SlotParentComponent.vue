@@ -45,8 +45,8 @@ export default {
   <SlotContent  v-bind:childTitle="'有序列表'">
 
   </SlotContent>
-
-  <SlotContent></SlotContent>
+<!--  已经学习到地38节，插槽备用内容和作用域插槽的使用  -->
+  <SlotContent v-bind:child-title="'已经学习到地38节，插槽备用内容和作用域插槽的使用'"></SlotContent>
 </template>
 
 
