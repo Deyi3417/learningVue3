@@ -40,7 +40,7 @@ export default {
       已经看到32集：
         prop的基本用法
   -->
-  <Content v-bind:contentMessage_02='uMainComponents02' staticValue="静态的值_value03">dy:二级组件</Content>
+  <Content v-bind:contentMessage_02='uMainComponents02' :list="list" staticValue="静态的值_value03">dy:二级组件</Content>
   <p style="border: 5px crimson solid"></p>
   <!-- 拿到子组件Content的数据， 通过自定义事件 -->
   <!-- 2. 在自定义组件中，通过v-on监听子组件中自定义的事件  -->
