@@ -37,8 +37,10 @@ export default {
   <p style="border: 1px dashed mediumaquamarine"></p>
 
 <!-- 无序列表 -->
-  <SlotContent v-bind:childTitle="'无序列表'">
-
+  <SlotContent v-bind:childTitle="'无序列表'" >
+    <template v-slot:listTest="slotProps">
+      {{slotProps.listKey}}
+    </template>
   </SlotContent>
 
 <!-- 有序列表 -->

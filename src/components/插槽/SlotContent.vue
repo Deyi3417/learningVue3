@@ -11,7 +11,7 @@ export default {
         },
         required: false
       },
-      listParam2: [2, 2, 2, 2],
+      listParam2: [3, 7, 1, 8],
     }
   },
   props: {
@@ -44,6 +44,10 @@ export default {
     <h4>我是子组件的测试内容 ---- 2</h4>
     <div>
       <slot name="footer"></slot>
+    </div>
+
+    <div>
+      <slot name="listTest" :listKey="listParam2" ></slot>
     </div>
   </div>
 
