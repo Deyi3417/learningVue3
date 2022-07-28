@@ -16,12 +16,13 @@ import Props from "./components/Props/Props.vue";
 import ParentComponent from "./components/父子组件/ParentComponent.vue";
 import SlotContent from "./components/插槽/SlotContent.vue";
 import SlotParentComponent from "./components/插槽/SlotParentComponent.vue";
+import PI_HomeView from "./components/provide-inject/PI_HomeView.vue";
 // import Day03_style from "./components/Day03_style.vue";
 // import Day03_class from "./components/Day03_class.vue";
 </script>
 
 <template>
-  <SlotParentComponent></SlotParentComponent>
+  <PI_HomeView></PI_HomeView>
 </template>
 
 <style>

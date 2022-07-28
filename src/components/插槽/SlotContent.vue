@@ -16,14 +16,12 @@ export default {
   },
   props: {
     childTitle: {
-      type:String,
+      type: String,
       default() {
         return [];
       },
       required: false
-
     }
-
   }
 }
 </script>
@@ -47,7 +45,11 @@ export default {
     </div>
 
     <div>
-      <slot name="listTest" :listKey="listParam2" ></slot>
+      <!--  数据提供给父组件
+          name若没有，则父组件则是v-slot:default=""
+        -->
+
+      <slot name="listTest" :listKey="listParam2" :message="message"></slot>
     </div>
   </div>
 
