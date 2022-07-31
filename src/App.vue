@@ -18,12 +18,13 @@ import SlotContent from "./components/插槽/SlotContent.vue";
 import SlotParentComponent from "./components/插槽/SlotParentComponent.vue";
 import PI_HomeView from "./components/provide-inject/PI_HomeView.vue";
 import LifeCycle from "./components/生命周期/LifeCycle.vue";
+import CombinedAPI from "./components/组合式API/CombinedAPI.vue";
 // import Day03_style from "./components/Day03_style.vue";
 // import Day03_class from "./components/Day03_class.vue";
 </script>
 
 <template>
-  <LifeCycle></LifeCycle>
+  <CombinedAPI></CombinedAPI>
 </template>
 
 <style>
