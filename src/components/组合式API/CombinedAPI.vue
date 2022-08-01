@@ -1,5 +1,5 @@
 <script>
-import {ref} from "vue";
+import {reactive, ref, toRefs} from "vue";
 
 export default {
   name: "CombinedAPI",
@@ -34,7 +34,7 @@ export default {
     console.log("num:" + num);
 
     /*
-      带 ref 的响应式变量
+      带 ref 的响应式变量 --通过ref定义响应式变量
       ref 接收参数并将其包裹在一个带有 value property 的对象中返回，然后可以使用该 property 访问或更改响应式变量的值：
       将值封装在一个对象中，看似没有必要，但为了保持 JavaScript 中不同数据类型的行为统一，这是必须的。
       这是因为在 JavaScript 中，Number 或 String 等基本类型是通过值而非引用传递的：
@@ -49,10 +49,27 @@ export default {
       console.log("改变后的num:" + num + "--" + num02.value)
     }
 
+    // 通过reactive定义响应式引用类型的数据
+    const obj = reactive({
+      name: "凌云",
+      age: 18,
+      children: {
+        name: "凌志",
+        age: 1,
+      }
+    })
+
+    function changeObj() {
+      obj.name = "紫苏";
+    }
+
     // 要传出去的值，使用return
+    // toRef 使得解构后的数据重新获得响应式 toRefs（）函数  let {name, children} = toRefs(obj) 与 ...toRef(obj)等效
+    // let {name, children} = toRefs(obj);
+    // ...obj三目运算符，传出去的值是非响应式的 通过ES6扩展运算符进行结构使得对象中的属性不是响应式（...obj）
     return {
-      message, props, num, num02,
-      changeNum
+      message, props, num, num02, ...toRefs(obj),
+      changeNum, changeObj
     };
   },
   beforeCreate() {
@@ -81,8 +98,12 @@ export default {
   <!--  num02模板会自动解析value值  -->
   <h3>{{ message }}--{{ props }}--{{ num }}--{{ num02 }}</h3>
   <button @click="changeNum">改变number</button>
-  <p style="color: yellowgreen; font-size: 30px">-------------------------------------------------------------------------------------------</p>
+  <p style="color: yellowgreen; font-size: 30px">
+    -------------------------------------------------------------------------------------------</p>
   <h3 style="color: #e87f3d">已经学习到：44.vue3组合式API在setup中定义变量</h3>
+  <!--  <h3>{{ obj }}&#45;&#45;{{ obj.name }}&#45;&#45;{{ obj.age }}&#45;&#45;{{obj.children}}</h3>-->
+  <h3>{{ obj }}--{{ name }}--{{ age }}--{{ children }}</h3>
+  <button @click="changeObj">改变obj.name</button>
 
 
 </template>
