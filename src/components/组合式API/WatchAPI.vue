@@ -1,5 +1,6 @@
 <script>
-import {reactive, ref, toRefs} from "vue";
+import {reactive, ref, toRefs, watch} from "vue";
+
 export default {
   name: "WatchAPI",
   data() {
@@ -10,7 +11,37 @@ export default {
 
   setup() {
     // setup 中的 return
-    return {};
+    let counter = ref(666);
+
+    function changeCounter() {
+      console.log(counter);
+      console.log(counter.value);
+      counter.value++;
+
+    };
+
+    // watch(侦听的响应式引用, 回调函数)
+    watch(counter, (newValue, oldValue) => {
+      console.log("测试setup中的watch:newValue=" + newValue + " oldValue=" + oldValue)
+    });
+    // watchEffect(只有回调函数)
+
+
+    const user = reactive({
+      name: "海马体",
+      age: 18,
+    });
+
+    function changeUserName() {
+      user.name = "天真蓝";
+      user.age = 25;
+    }
+
+    return {
+      counter, user,
+      changeCounter, changeUserName
+
+    };
   },
 
   // watch函数 -- 选项式API
@@ -29,6 +60,9 @@ export default {
   学习视频链接：<a href="https://www.bilibili.com/video/BV1QA4y1d7xf?p=45&vd_source=34ea8cac3a28f1df5cc57b063f27ea5a"
             target="_blank">Vue组合式：在setup中使用watch</a><br>
   <h3>已经学习到第45节，在setup使用watch</h3>
+  <h3>{{ counter }} -- {{ user.name }} -- {{ user }} -- {{ user.age }}</h3>
+  <button @click="changeCounter">改变数字</button>
+  <button @click="changeUserName">改变user</button>
 
 
 </template>
