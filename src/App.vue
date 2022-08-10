@@ -20,12 +20,13 @@ import PI_HomeView from "./components/provide-inject/PI_HomeView.vue";
 import LifeCycle from "./components/生命周期/LifeCycle.vue";
 import CombinedAPI from "./components/组合式API/CombinedAPI.vue";
 import WatchAPI from "./components/组合式API/WatchAPI.vue";
+import SetupProps from "./components/组合式setup/SetupProps.vue";
 // import Day03_style from "./components/Day03_style.vue";
 // import Day03_class from "./components/Day03_class.vue";
 </script>
 
 <template>
-  <watch-a-p-i></watch-a-p-i>
+  <setup-props></setup-props>
 </template>
 
 <style>
