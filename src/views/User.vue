@@ -9,6 +9,7 @@ export default {
   props: {},
   setup() {
     const id = 999;
+    // useRoute() 使用useRoute()可以获取传过来的值 router全局的 route局部的
     console.log(useRoute())
     console.log("=============测试1=============")
     console.log(useRoute().params)

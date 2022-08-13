@@ -14,22 +14,33 @@ import {createRouter, createWebHashHistory} from "vue-router"
 import Parent from "../views/Parent.vue";
 import StyleOne from "../views/StyleOne.vue";
 import styleTwo from "../views/StyleTwo.vue";
+import Page from "../views/Page.vue";
+import Login from "../views/Login.vue";
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
 // 我们后面再讨论嵌套路由。
 const routes = [
 
-    {path: '/home', component: Home},
+    {path: '/', component: Home},
 
-    {path: '/about', component: About},
+    {
+        path: '/about',
+        component: About,
+        name: 'about'
+    },
 
     /*
      传用户id过来
      路径参数 用冒号 : 表示。当一个路由被匹配时，它的 params 的值将在每个组件中以 this.$route.params 的形式暴露出来。
      路由正则与重要参数：保证这个id只能传数字类型
      */
-    {path: '/user/:id', component: User},
+    {
+        // name 在编程式导航 可以使用
+        name: 'liudy',
+        path: '/user/:id',
+        component: User
+    },
 
     {
         /*
@@ -67,6 +78,16 @@ const routes = [
             // ...其他子路由
             {path: 'styleTwo', component: styleTwo},
         ],
+    },
+
+    {
+        path:'/page',
+        component: Page
+    },
+
+    {
+        path: '/login',
+        component: Login
     },
 
     // 若路径都没有匹配到，跳转到NotFound页面
