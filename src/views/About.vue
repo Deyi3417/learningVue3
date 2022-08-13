@@ -10,6 +10,23 @@ export default {
     console.log(this.$route.query.name)
     console.log(this.$route.query.password)
   },
+  methods: {
+    goBack() {
+      // 向前移动一条记录，与 router.forward() 相同
+      // router.go(1)
+
+      // 返回一条记录，与 router.back() 相同
+      // router.go(-1)
+      console.log("====liudy23测试====")
+      console.log(this.$router)
+      console.log("====liudy23测试02====" + this.$router.back)
+      console.log(this.$router.back)
+      // this.$router.back
+      // this.$router.go(-1)
+      // this.$router.back()
+    }
+
+  },
 
   setup() {
     // useRoute().query.password 使用useRoute()获取值
@@ -27,7 +44,8 @@ export default {
 </script>
 <template>
   <div>About-liudy23专用测试2</div>
-  <h3>{{name}} -- {{password}}</h3>
+  <h3>{{ name }} -- {{ password }}</h3>
+  <button @click="goBack">返回</button>
 
 </template>
 
