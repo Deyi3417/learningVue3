@@ -1,11 +1,12 @@
 <script>
 export default {
-  name: "RouterVue"
+  name: "RouterVue",
+  components: {}
+
 }
 </script>
 <template>
-  <router-view></router-view>
-  <h1>Hello App!</h1>
+  <h1>Hello App! PURE MILK</h1>
   <p>
     <!--使用 router-link 组件进行导航 -->
     <!--通过传递 `to` 来指定链接 -->
@@ -13,8 +14,11 @@ export default {
     <!--  使用一个自定义组件 router-link 来创建链接
       这使得 Vue Router 可以在不重新加载页面的情况下更改 URL，处理 URL 的生成以及编码。
       -->
-    <router-link to="/">Go to Home</router-link>
-    <router-link to="/about">Go to About</router-link>
+    <router-link to="/home">Go to Home</router-link><br>
+    <router-link to="/about">Go to About</router-link><br>
+    <router-link to="/user/123">Go to User</router-link><br>
+    <router-link to="/news/666">Go to News</router-link><br>
+    <router-link to="/parent">Go to Parent</router-link><br>
   </p>
   <!-- 路由出口 -->
   <!-- 路由匹配到的组件将渲染在这里 -->
