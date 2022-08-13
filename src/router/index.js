@@ -16,6 +16,9 @@ import StyleOne from "../views/StyleOne.vue";
 import styleTwo from "../views/StyleTwo.vue";
 import Page from "../views/Page.vue";
 import Login from "../views/Login.vue";
+import NavigationBar from "../views/shop/NavigationBar.vue";
+import SideBar from "../views/shop/SideBar.vue";
+import ContentBar from "../views/shop/ContentBar.vue";
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
@@ -27,6 +30,7 @@ const routes = [
     {
         path: '/about',
         component: About,
+        // 路由名称
         name: 'about'
     },
 
@@ -64,7 +68,8 @@ const routes = [
 
          */
         path: '/news/:id(\\d+)*',
-        component: News
+        component: News,
+        name: 'syNews'
     },
 
     {
@@ -87,7 +92,39 @@ const routes = [
 
     {
         path: '/login',
-        component: Login
+        component: Login,
+        name: 'doLogin'
+    },
+
+    {
+        path:'/navigation',
+        component: NavigationBar,
+        name:'navigation'
+    },
+
+    {
+        path:'/side',
+        component: SideBar,
+        name:'side'
+    },
+
+    {
+        path:'/content',
+        component: ContentBar,
+        name:'content'
+    },
+
+    // shop路由同时展示三个界面
+    {
+        path:'/shop',
+        components: {
+            // 访问/shop路径，默认弹出的界面是SideBar
+            default: SideBar,
+            // LeftSidebar: LeftSidebar 的缩写
+            NavigationBar,
+            // 它们与 `<router-view>` 上的 `name` 属性匹配
+            ContentBar
+        }
     },
 
     // 若路径都没有匹配到，跳转到NotFound页面

@@ -6,6 +6,8 @@ export default {
 }
 </script>
 <template>
+  <router-view name="NavigationBar"></router-view>
+  <router-view name="ContentBar"></router-view>
   <h1>Hello App! PURE MILK</h1>
   <a href="https://www.bilibili.com/video/BV1QA4y1d7xf?p=57&spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=34ea8cac3a28f1df5cc57b063f27ea5a"
      target="_blank">router 学习视频链接</a>
@@ -22,11 +24,21 @@ export default {
     <br>
     <router-link to="/user/123">Go to User</router-link>
     <br>
-    <router-link to="/news/666">Go to News</router-link>
+    <!--    <router-link to="/news/666">Go to News</router-link>-->
+    <router-link :to="{ name: 'syNews', params: { id: '9669'}}">go to News 路由使用名字</router-link>
+    <!--    <router-link :to="{ name: 'user', params: { username: 'erina' }}">-->
+    <!--      User-->
+    <!--    </router-link>-->
     <br>
     <router-link to="/parent">Go to Parent</router-link>
     <br>
     <router-link to="/page">Go to Page</router-link>
+    <br>
+    <router-link :to="{ name: 'navigation'}">go to NavigationBar</router-link>
+    <br>
+    <router-link :to="{ name: 'side'}">go to SideBar</router-link>
+    <br>
+    <router-link :to="{ name: 'content'}">go to ContentBar</router-link>
     <br>
   </p>
   <!-- 路由出口 -->

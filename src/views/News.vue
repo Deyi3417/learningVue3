@@ -4,8 +4,9 @@ export default {
 }
 </script>
 <template>
+  <p style="color: yellowgreen; border: 3px cornflowerblue; ">--------------------------------------------------</p>
   <div>
-    News界面
+    <h2>News界面</h2>
   </div>
 
 </template>
