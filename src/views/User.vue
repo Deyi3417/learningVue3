@@ -38,7 +38,7 @@ export default {
 <!--  组合式API  -->
 <script setup>
   import {useRoute} from "vue-router/dist/vue-router";
-  import {defineProps} from "vue";
+  // import {defineProps} from "vue";
 
   console.log(useRoute().params.uid);
   // 接受的参数，配合// 请确保添加一个与路由参数完全相同的 prop 名----props: true 使用

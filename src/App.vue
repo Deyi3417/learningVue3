@@ -23,13 +23,15 @@ import WatchAPI from "./components/组合式API/WatchAPI.vue";
 import SetupProps from "./components/组合式setup/SetupProps.vue";
 import RouterVue from "./router/RouterVue.vue";
 import StateManage from "./components/状态管理/StateManage.vue";
+import User from "./views/user/User.vue";
 // import Day03_style from "./components/Day03_style.vue";
 // import Day03_class from "./components/Day03_class.vue";
 </script>
 
 <template>
-  <RouterVue></RouterVue>
-  <state-manage></state-manage>
+<!--  <RouterVue></RouterVue>-->
+<!--  <state-manage></state-manage>-->
+  <User></User>
 </template>
 
 <style>
