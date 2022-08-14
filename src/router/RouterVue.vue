@@ -6,6 +6,7 @@ export default {
 }
 </script>
 <template>
+  <!--  命名视图  -->
   <router-view name="NavigationBar"></router-view>
   <router-view name="ContentBar"></router-view>
   <h1>Hello App! PURE MILK</h1>
@@ -18,8 +19,10 @@ export default {
     <!--  使用一个自定义组件 router-link 来创建链接
       这使得 Vue Router 可以在不重新加载页面的情况下更改 URL，处理 URL 的生成以及编码。
       -->
-    <router-link to="/">Go to Home</router-link>
+    <router-link to="/">Go to Home--01</router-link>
     <br>
+<!--    <router-link :to="{name:'home'}">Go to Home&#45;&#45;02</router-link>-->
+<!--    <br>-->
     <router-link to="/about">Go to About</router-link>
     <br>
     <router-link to="/user/123">Go to User</router-link>

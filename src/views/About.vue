@@ -23,7 +23,7 @@ export default {
       console.log(this.$router.back)
       // this.$router.back
       // this.$router.go(-1)
-      // this.$router.back()
+      this.$router.back()
     }
 
   },

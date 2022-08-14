@@ -27,6 +27,37 @@ const routes = [
 
     {path: '/', component: Home},
 
+    // {path: '/home', component: Home, name: 'home'},
+
+    // 重定向 redirect 访问/home 后路径会跳转到/login
+    {
+        path: '/home',
+        redirect: '/login'
+    },
+    // 重定向 redirect 访问/dy后路径会跳转到/about 可以是路径 也可以是对象{name:'about'}
+    {
+        path: '/dy',
+        redirect: {name: 'about'}
+    },
+
+    // 甚至是一个方法，动态返回重定向目标：
+    {
+        path: '/fun',
+        // 方法接收目标路由作为参数
+        // return 重定向的字符串路径/路径对象
+        redirect: (to) => {
+            console.log("-----------liudy23测试-----------")
+            console.log(to)
+
+            // 不带参数的重定向
+            // return {name: 'doLogin'}
+
+            // 带参数的重定向
+            return {name: 'liudy', params: {id: 999555}}
+
+        }
+    },
+
     {
         path: '/about',
         component: About,
@@ -42,8 +73,12 @@ const routes = [
     {
         // name 在编程式导航 可以使用
         name: 'liudy',
-        path: '/user/:id',
-        component: User
+        path: '/user/:uid',
+        component: User,
+
+        // 将 props 传递给路由组件
+        // 请确保添加一个与路由参数完全相同的 prop 名
+        props: true
     },
 
     {
@@ -74,6 +109,8 @@ const routes = [
 
     {
         path: '/parent',
+        // 别名 通过别名，你可以自由地将 UI 结构映射到一个任意的 URL，而不受配置的嵌套结构的限制。
+        alias: '/father',
         component: Parent,
         children: [
             // 当 /user/:id 匹配成功
@@ -86,7 +123,7 @@ const routes = [
     },
 
     {
-        path:'/page',
+        path: '/page',
         component: Page
     },
 
@@ -97,26 +134,26 @@ const routes = [
     },
 
     {
-        path:'/navigation',
+        path: '/navigation',
         component: NavigationBar,
-        name:'navigation'
+        name: 'navigation'
     },
 
     {
-        path:'/side',
+        path: '/side',
         component: SideBar,
-        name:'side'
+        name: 'side'
     },
 
     {
-        path:'/content',
+        path: '/content',
         component: ContentBar,
-        name:'content'
+        name: 'content'
     },
 
     // shop路由同时展示三个界面
     {
-        path:'/shop',
+        path: '/shop',
         components: {
             // 访问/shop路径，默认弹出的界面是SideBar
             default: SideBar,
@@ -124,7 +161,11 @@ const routes = [
             NavigationBar,
             // 它们与 `<router-view>` 上的 `name` 属性匹配
             ContentBar
-        }
+        },
+        // 路由组件传参 对于有命名视图的路由，你必须为每个命名视图定义 props 配置：
+        // 对象模式：props: { newsletterPopup: false }
+        // 函数模式：props: route => ({ query: route.query.q })
+        props: {default: true, NavigationBar: false, ContentBar: false}
     },
 
     // 若路径都没有匹配到，跳转到NotFound页面
