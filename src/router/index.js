@@ -2,8 +2,8 @@
 // const Home = { template: '<div>Home</div>' }
 // const About = { template: '<div>About</div>' }
 
-// 1.1 也可以从其他文件导入
-import About from "../views/About.vue";
+// 1.1 也可以从其他文件导入  --静态导入
+// import About from "../views/About.vue";
 import Home from "../views/Home.vue";
 import User from "../views/User.vue";
 import NotFound from "../views/NotFound.vue";
@@ -19,6 +19,9 @@ import Login from "../views/Login.vue";
 import NavigationBar from "../views/shop/NavigationBar.vue";
 import SideBar from "../views/shop/SideBar.vue";
 import ContentBar from "../views/shop/ContentBar.vue";
+
+// 路由懒加载 用到的时候再进行加载 about示例
+const About = () => import('../views/About.vue')
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
@@ -71,7 +74,7 @@ const routes = [
             // if ("条件不成立") {
             //     不放行
             // }
-            if (123 === 1213) {
+            if (123 === 123) {
                 next()
             }
 
