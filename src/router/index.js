@@ -10,7 +10,7 @@ import NotFound from "../views/NotFound.vue";
 import News from "../views/News.vue";
 
 // import {createRouter, createWebHashHistory} from "vue-router/dist/vue-router";
-import {createRouter, createWebHashHistory} from "vue-router"
+import {createRouter, createWebHashHistory, createWebHistory} from "vue-router"
 import Parent from "../views/Parent.vue";
 import StyleOne from "../views/StyleOne.vue";
 import styleTwo from "../views/StyleTwo.vue";
@@ -62,7 +62,20 @@ const routes = [
         path: '/about',
         component: About,
         // 路由名称
-        name: 'about'
+        name: 'about',
+        // 每路守卫 路由独享的守卫 beforeEnter 守卫 只在进入路由时触发，不会在 params、query 或 hash 改变时触发。
+        beforeEnter: (to, from, next) => {
+            console.log("----about: to from ----")
+            console.log(to)
+            console.log(from)
+            // if ("条件不成立") {
+            //     不放行
+            // }
+            if (123 === 1213) {
+                next()
+            }
+
+        },
     },
 
     /*
@@ -180,8 +193,32 @@ const routes = [
 // 你可以在这里输入更多的配置，但我们在这里
 // 暂时保持简单
 const router = createRouter({
+    // 不同的历史模式  hash 模式是用 createWebHashHistory() 创建的：
+    // 它在内部传递的实际 URL 之前使用了一个哈希字符（#）。由于这部分 URL 从未被发送到服务器，所以它不需要在服务器层面上进行任何特殊处理。
     // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
-    history: createWebHashHistory(), routes, // `routes: routes` 的缩写
+    // history: createWebHashHistory(), routes, // `routes: routes` 的缩写
+    // 历史模式: (Hash 模式) (HTML5 模式) 两种模式的区别是有无#号
+    history: createWebHistory(), routes, // `routes: routes` 的缩写
 })
+//
+// router.beforeEach((to, from) => {
+//
+//
+// })
+
+// 全局守卫
+// router.beforeEach((to, from, next) => {
+//     // ...
+//     // 返回 false 以取消导航
+//     // return false
+//     console.log("--to--from--")
+//     console.log(to)
+//     console.log(from)
+//     // if (to.name !== 'doLogin'){
+//     //     next() // t通行证
+//     // } else {
+//     //     next()
+//     // }
+// })
 
 export default router
